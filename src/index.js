@@ -16,6 +16,11 @@ app.use(cors());
 app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter);
 
+// New route to display "Hello, World!"
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
+
 mongoose.connect(
   mongoDBURI,
   {
